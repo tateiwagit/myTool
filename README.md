@@ -3,3 +3,5 @@
 完全にただの趣味です。
 
 httpsのsetupに変えてみた。
+
+git-gutterを導入してみた
