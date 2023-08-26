@@ -1,0 +1,52 @@
+# CollectScreen.kv
+
+#:kivy 1.9.0
+
+<CollectScreenApp>:
+    name: 'collect'
+
+    BoxLayout:
+        orientation: 'horizontal'
+
+        AnchorLayout:
+            anchor_x: 'left'
+            anchor_y: 'top'
+            size_hint_x: 0.3
+
+            Button:
+                text: 'Left Button'
+                size_hint: None, None
+                size: root.width * 1/7, root.width * 1/7
+                background_color: 0, 0, 1, 1  # 青色
+                border_radius: [root.width * 1/14]
+
+                on_release: app.switch_screen('home')
+
+        BoxLayout:
+            orientation: 'vertical'
+            #pos_hint: {'center_x': 1, 'y': 0}
+            spacing: 10
+            padding: 10
+
+            Label:
+                text: 'collection list'
+                font_size: '20sp'
+
+            Button:
+                text: 'Button 1'
+                size_hint_y: None
+                height: root.height * 1/6
+
+                on_release: app.switch_screen('browse')
+
+            Button:
+                text: 'Button 2'
+                size_hint_y: None
+                height: root.height * 1/6
+
+            Button:
+                text: 'Button 3'
+                size_hint_y: None
+                height: root.height * 1/6
+
+        

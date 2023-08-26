@@ -1,7 +1,52 @@
 # HomeScreen.kv
-<HomeScreen>:
-    name : "home"
+
+#:kivy 1.9.0
+
+
+# homescreen.kv
+<HomeScreenApp>:
+    #name : 'home'
     BoxLayout:
         orientation: 'vertical'
+
         Label:
-            text: 'Page One'
+            text: 'Image Collector'
+            font_size: '20sp'
+            #size_hint_y: None
+            #height: '40dp'
+            color: 1, 0, 0, 1  # テキストの色を赤に設定
+
+        BoxLayout:
+            orientation: 'vertical'
+            #size_hint_y: None
+            #height: '120dp'
+
+            Button:
+                text: 'Button 1'
+                on_release: app.switch_screen('project')
+            
+            Label:
+                text: 'Label'
+                
+            Button:
+                text: 'Button 2'
+                
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Button:
+                text: 'Button 3'
+                on_release: app.switch_screen('collect')
+
+            BoxLayout:
+                orientation: 'horizontal'
+                #size_hint_y: None
+                #height: '40dp'
+
+                Button:
+                    text: 'Button 4'
+                Button:
+                    text: 'Button 5'
+                Button:
+                    text: 'Button 6'

@@ -1,0 +1,21 @@
+# DownloadScreen.kv
+
+#:kivy 1.9.0
+
+<DownloadScreenApp>:
+    name : 'download'
+
+    BoxLayout:
+        orientation: 'horizontal'
+
+        AnchorLayout:
+            anchor_x: 'left'
+            anchor_y: 'top'
+            Button:
+                text: 'Left Button'
+                size_hint: None, None
+                size: root.width * 1/7, root.width * 1/7
+                background_color: 0, 0, 1, 1  # 青色
+                border_radius: [root.width * 1/14]
+
+                on_release: app.switch_screen('browse')

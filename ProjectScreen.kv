@@ -1,0 +1,57 @@
+# ProjectScreenApp.kv
+
+#:kivy 1.9.0
+
+<ProjectScreenApp>:
+    name : 'project'
+
+    BoxLayout:
+        orientation: 'horizontal'
+
+        AnchorLayout:
+            anchor_x: 'left'
+            anchor_y: 'top'
+            Button:
+                text: 'Left Button'
+                size_hint: None, None
+                size: root.width * 1/7, root.width * 1/7
+                background_color: 0, 0, 1, 1  # 青色
+                border_radius: [root.width * 1/14]
+
+                on_release: app.switch_screen('home')
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'Project list'
+                font_size: '20sp'
+
+            Button:
+                text: 'Button 1'
+                size_hint_y: None
+                height: root.height * 1/6
+
+                on_release: app.switch_screen('browse')
+
+            Button:
+                text: 'Button 2'
+                size_hint_y: None
+                height: root.height * 1/6
+
+            Button:
+                text: 'Button 3'
+                size_hint_y: None
+                height: root.height * 1/6
+
+        AnchorLayout:
+            anchor_x: 'right'
+            anchor_y: 'top'
+            Button:
+                text: 'Right Button'
+                size_hint: None, None
+                size: root.width * 1/7, root.width * 1/7
+                background_color: 1, 0, 0, 1  # 赤色
+                border_radius: [root.width * 1/14]
+
+                on_release: app.switch_screen('browse')

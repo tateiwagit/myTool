@@ -1,0 +1,62 @@
+# BrowseScreenApp.kv
+
+#:kivy 1.9.0
+
+<BrowseScreenApp>:
+    name : 'browse'
+
+    BoxLayout:
+        orientation: 'horizontal'
+
+        AnchorLayout:
+            anchor_x: 'left'
+            anchor_y: 'top'
+            Button:
+                text: 'Left Button'
+                size_hint: None, None
+                size: root.width * 1/7, root.width * 1/7
+                background_color: 0, 0, 1, 1  # 青色
+                border_radius: [root.width * 1/14]
+
+                on_release: app.switch_screen('project')
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: None, None
+            size: root.width * 2/3, root.height * 2/3
+            pos_hint: {'x': 0, 'y': 0.05}
+
+            BoxLayout:
+                orientation: 'vertical'
+                Button:
+                    text: 'Button 1'
+                Button:
+                    text: 'Button 2'
+
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint: 0.7, 1
+                size_y: self.parent.height * 2/3
+
+                Button:
+                    text: 'Button 3'
+                Button:
+                    text: 'Button 4'
+                Button:
+                    text: 'Button 5'
+                Button:
+                    text: 'Button 6'
+
+
+        AnchorLayout:
+            anchor_x: 'right'
+            anchor_y: 'top'
+            Button:
+                text: 'go to Download'
+                size_hint: None, None
+                size: root.width * 1/7, root.width * 1/7
+                background_color: 1, 0, 0, 1  # 赤色
+                border_radius: [root.width * 1/14]
+
+                on_release: app.switch_screen('download')

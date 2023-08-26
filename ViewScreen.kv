@@ -1,0 +1,59 @@
+# ViewScreen.kv
+
+#:kivy 1.9.0
+
+<ViewScreenApp>:
+    name: 'view'
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            Button:
+                text: 'Button'
+                size_hint: None, None
+                size: root.width * 1/7, root.width * 1/7
+                background_color: 0, 0, 1, 1  # 青色
+                border_radius: [root.width * 1/14]
+                pos_hint: {'left': 1, 'top': 1}
+
+            Label:
+                canvas.before:
+                    #id: backsldr 背景にidはつけられない
+                    Color:
+                        rgb: 1, 0, 0
+                color: 1, 0 ,0
+                text: 'Image Title'
+                size_hint: None, None
+                size: self.texture_size
+                font_size: '20sp'
+                pos_hint: {'center_x': 0.5, 'top': 1}  # 中央に配置
+
+
+        BoxLayout:
+            id: 'box_under'
+            orientation: 'horizontal'
+            padding: 50
+            spacing: 20
+            size_hint: None, None
+            size: root.width * 2/3, root.height * 2/3
+            pos_hint: {'center_x': 0.5, 'top': 0.9}  # 中央に表示し下辺から離す
+
+            Button:
+                text: 'Button 1'
+                #size_hint: None, None
+                #size: self.texture_size
+                
+            Label:
+                text: 'Label'
+                #size_hint: None, None
+                size: self.texture_size
+                
+            Button:
+                text: 'Button 2'
+                #size_hint: None, None
+                #size: self.texture_size
+                
+
